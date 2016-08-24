@@ -1,10 +1,20 @@
-all: a2b b2d m2s
+all: a2b b2d m2s xpack
+
+clean:
+	rm a2b
+	rm b2d
+	rm m2s
+	rm xpack
 
 a2b:
-	cd a2fcbmp && $(MAKE)
+	cd src_a2b && $(MAKE)
 
 b2d:
-	cd src && $(MAKE)
+	cd src_b2d && $(MAKE)
 
 m2s:
-	echo "Missing sources!"
+	cd src_m2s && $(MAKE)
+
+xpack:
+	cd src_xpack && $(MAKE)
+
