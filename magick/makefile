@@ -16,4 +16,4 @@ PRG=m2s
 all: $(PRG)
 
 $(PRG): $(SRC).c makefile
-	gcc -DMINGW -o ..\$(PRG) $(SRC).c 
+	gcc -DMINGW -o ../$(PRG) $(SRC).c 
