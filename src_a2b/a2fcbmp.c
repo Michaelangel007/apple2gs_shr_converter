@@ -1222,7 +1222,7 @@ unsigned char dlomaincolor[16] = {
 /* -------------------------------------------------------------- */
 /* http://stackoverflow.com/questions/7602919/how-do-i-generate-random-numbers-without-rand-function */
 ushort RandomSeed = (ushort)0xACE1;
-ushort random()
+ushort my_random()
 {
     ushort bit = ((RandomSeed >> 0) ^ (RandomSeed >> 2) ^ (RandomSeed >> 3) ^ (RandomSeed >> 5) ) & 1;
 
@@ -1243,7 +1243,7 @@ int RandomRange(int iMaxValue)
 
   do {
     /* get random number */
-    iRetVal = (int)random();
+    iRetVal = (int)my_random();
     /* get a positive value */
     if (iRetVal < 0) iRetVal *= -1;
 
