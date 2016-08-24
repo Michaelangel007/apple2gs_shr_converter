@@ -1,10 +1,7 @@
 all: a2b b2d m2s xpack
 
 clean:
-	rm a2b
-	rm b2d
-	rm m2s
-	rm xpack
+	rm a2b b2d m2s xpack
 
 a2b:
 	cd src_a2b && $(MAKE)
