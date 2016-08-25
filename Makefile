@@ -1,4 +1,4 @@
-all: a2b b2d m2s xpack
+all: a2b b2d m2s xpack install
 
 clean:
 	rm a2b b2d m2s xpack
@@ -14,4 +14,8 @@ m2s:
 
 xpack:
 	cd src_xpack && $(MAKE)
+
+install: a2b b2d m2s xpack
+	echo "Installing into /usr/local/bin..."
+	sudo cp a2b b2d m2s xpack /usr/local/bin/
 
