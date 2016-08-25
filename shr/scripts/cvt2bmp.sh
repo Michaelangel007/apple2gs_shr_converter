@@ -5,13 +5,19 @@
 # for ImageMagick version 6.9 use the following 
 # MAGICK="c:/IM/convert"
 # for ImageMagick version 7 use the following 
-MAGICK="c:/IM/magick"
+#MAGICK="c:/IM/magick"
 
 # For most modern Linux distributions, all ImageMagick binaries are located in: /usr/bin/ (see below)
 # for ImageMagick version 6.9 use the following 
 # MAGICK="/usr/bin/convert"
 # for ImageMagick version 7 use the following 
 # MAGICK="/usr/bin/magick"
+MAGICK=`which magick`
+
+if [ ! -z "${MAGICK}" ]; then
+   echo "ERROR: Image Magick isn't installed."
+   exit 1
+fi
 
 if [ ! -e BMP320 ]; then
 	mkdir BMP320

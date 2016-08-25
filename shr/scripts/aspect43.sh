@@ -7,8 +7,8 @@
 # MAGICK="c:/IM/convert"
 # IDENTIFY="c:/IM/identify"
 # for ImageMagick version 7 use the following 
-MAGICK="c:/IM/magick"
-IDENTIFY="c:/IM/magick identify"
+#MAGICK="c:/IM/magick"
+#IDENTIFY="c:/IM/magick identify"
 
 # For most modern Linux distributions, all ImageMagick binaries are located in: /usr/bin/ (see below)
 # for ImageMagick version 6.9 use the following 
@@ -17,11 +17,23 @@ IDENTIFY="c:/IM/magick identify"
 # for ImageMagick version 7 use the following 
 # MAGICK="/usr/bin/magick"
 # IDENTIFY="/usr/bin/magick identify"
+MAGICK=`which magick`
+IDENTIFY=`which magick` identify
+
+if [ ! -z "${MAGICK}" ]; then
+   echo "ERROR: Image Magick isn't installed."
+   exit 1
+fi
 
 # set path to A2B converter below 
-A2B="C:/SHR/A2B2016/a2b"
+#A2B="C:/SHR/A2B2016/a2b"
 # For most modern Linux distributions, consider locating A2B in: /usr/bin/ (see below)
-# A2B="/usr/bin/a2b"
+A2B="/usr/local/bin/a2b"
+
+if [ ! -z "${A2B}" ]; then
+   echo "ERROR: Couldn't find path to 'a2b'"
+   exit 1
+fi
 
 # default usage
 method="a43s"

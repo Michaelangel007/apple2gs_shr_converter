@@ -2,9 +2,15 @@
 # cvt.sh - creates 6 variations of 320 x 200 SHR files using A2B and external segmented palettes
 
 # set path to A2B converter below 
-A2B="F:/SHR/A2B2015/a2b"
+#A2B="F:/SHR/A2B2015/a2b"
 # For most modern Linux distributions, consider locating A2B in: /usr/bin/ (see below)
 # A2B="/usr/bin/a2b"
+A2B="/usr/local/bin/a2b"
+
+if [ ! -z "${A2B}" ]; then
+   echo "ERROR: Couldn't find path to 'a2b'"
+   exit 1
+fi
 
 if [ ! -e SH30709 ]; then
 	mkdir SH30709
